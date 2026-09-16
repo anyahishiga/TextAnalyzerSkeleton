@@ -18,21 +18,21 @@ int TextAnalyzer::getWordCount()
 
     while (ss >> word)
     {
-        while (!word.empty() && std::ispunct(static_cast<unsigned char>(word.front()))
+        while (!word.empty() && std::ispunct(static_cast<unsigned char>(word.front())))
         {
             word.erase(word.begin());
         }
 
-        while (!word.empty() && std::ispunct(static_cast<unsigned char>(word.back()))
+        while (!word.empty() && std::ispunct(static_cast<unsigned char>(word.back())))
         {
             word.pop_back();
         }
-        
-			for (char& c : word)
-		{
-    		c = std::tolower(static_cast<unsigned char>(c));
-		}
-		
+
+        for (char& c : word)
+        {
+            c = std::tolower(static_cast<unsigned char>(c));
+        }
+
         if (!word.empty())
         {
             count++;
@@ -51,12 +51,12 @@ std::map<std::string, int> TextAnalyzer::getFrequencyMap()
 
     while (ss >> word)
     {
-		while (!word.empty() && std::ispunct(static_cast<unsigned char>(word.front()))
+        while (!word.empty() && std::ispunct(static_cast<unsigned char>(word.front())))
         {
             word.erase(word.begin());
         }
 
-        while (!word.empty() && std::ispunct(static_cast<unsigned char>(word.back()))
+        while (!word.empty() && std::ispunct(static_cast<unsigned char>(word.back())))
         {
             word.pop_back();
         }
